@@ -1,4 +1,5 @@
 class Bicycle {
+
   int cadence;
 
   // 库内只读变量
@@ -11,7 +12,9 @@ class Bicycle {
   // 命名构造方法
   Bicycle.multi()
       : cadence = 2,
-        gear = 1;
+        gear = 1 {
+    print('test');
+  }
 
   int get speed => _speed;
 
@@ -26,6 +29,8 @@ class Bicycle {
 }
 
 void main() {
+  var stopWatch = Stopwatch();
+  stopWatch.start();
   final bike = Bicycle(2, gear: 1);
 
   // 级联操作
@@ -34,6 +39,10 @@ void main() {
     ..gear = 3;
 
   print(bike);
+
+  print(DateTime.parse('2021-10-21'));
+  stopWatch.stop();
+  print(stopWatch.elapsed);
 }
 
 // null 判断s
